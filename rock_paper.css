@@ -1,0 +1,14 @@
+#buttons{
+display:block;
+text-align:center;
+}
+#uberschrift{
+text-align:center;
+color:red;
+text-decoration:underline;
+margin-bottom:30%
+}
+#result{
+text-align:center;
+margin-top:10%;
+}
