@@ -54,7 +54,7 @@ function checkHand(){
 	if (auswahlPC==="ROCK" && auswahlUser==="SCISSORS" || 		auswahlPC==="SCISSORS" && auswahlUser==="PAPER" ||
 		auswahlPC==="PAPER" && auswahlUser==="ROCK"){
 		countPC =countPC+1;
-		document.getElementById('thisRound').textContent = " Count: PC="+countPC+" to Count: User="+countUser;
+		document.getElementById('thisRound').textContent = " Count: PC="+countPC+" to Count: User="+countUser;	document.getElementById('computer').textContent = "The computer chose: "+auswahlPC;
 
 	}
 	else if (auswahlPC==="ROCK" && auswahlUser==="PAPER" ||
@@ -62,10 +62,11 @@ function checkHand(){
 		auswahlPC==="PAPER" && auswahlUser==="SCISSORS") {
 		countUser =countUser+1;
 		document.getElementById('thisRound').textContent = " Count: PC="+countPC+" to Count: User="+countUser;
+document.getElementById('computer').textContent = "The computer chose: "+auswahlPC;
 	}
 
 	else if (auswahlPC===auswahlUser){
-		document.getElementById('thisRound').textContent = "Draw";
+		document.getElementById('thisRound').textContent = "Draw";				document.getElementById('computer').textContent = "The computer chose: "+auswahlPC;
 		}
 		}
 		
