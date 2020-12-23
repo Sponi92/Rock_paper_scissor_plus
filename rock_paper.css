@@ -1,3 +1,7 @@
+body {
+background-color:lightgray;
+}
+
 #buttons{
 display:block;
 text-align:center;
@@ -6,9 +10,18 @@ text-align:center;
 text-align:center;
 color:red;
 text-decoration:underline;
-margin-bottom:30%
+margin-bottom:20%
 }
 #result{
 text-align:center;
-margin-top:10%;
+margin-top:5%;
+
+}
+#uberschrift2{
+text-align:center;
+color:blue;
+margin-bottom:5%;
+}
+#endscore{
+margin-top:5%;
 }
