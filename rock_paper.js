@@ -74,17 +74,20 @@ document.getElementById('computer').textContent = "The computer chose: ";
 
 	if (auswahlPC==="ROCK"){
 		var image = new Image();
-		image.src = rock;	document.getElementById("computerImage").appendChild(image);
+		image.src = rock;
+		image.alt = "Rock";	document.getElementById("computerImage").appendChild(image);
 		image.classList.add("resize");
 		}
 	else if (auswahlPC==="PAPER"){
 		var image = new Image();
-		image.src = paper;	document.getElementById("computerImage").appendChild(image);
+		image.src = paper;
+		image.alt= "Paper";	document.getElementById("computerImage").appendChild(image);
 		image.classList.add("resize");
 		}
 	else{
 		var image = new Image();
-		image.src = scissors;	document.getElementById("computerImage").appendChild(image);
+		image.src = scissors;
+		image.alt="Scissors";	document.getElementById("computerImage").appendChild(image);
 		image.classList.add("resize");
 	}
 }
