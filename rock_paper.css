@@ -16,7 +16,6 @@ margin:5%;
 }
 .header{
 text-align:center;
-margin-top:5%;
 }
 #uberschrift{
 color:black;
@@ -26,7 +25,6 @@ text-decoration:underline;
 color:#27452f;
 }
 #uberschrift3{
-margin-bottom:5%;
 color:black;
 }
 #result{
@@ -38,7 +36,7 @@ width:90px;
 height:70px;
 }
 #endscore{
-margin-top:5%;
+margin-top:3%;
 font-weight:900;
 color:#4a1e1e;
 font-size: 50px ;
@@ -46,3 +44,10 @@ font-size: 50px ;
 .results{
 margin-bottom:2%;
 }
+#thisRound{
+margin-bottom:0%;
+}
+#drawContainer{
+margin-bottom:0%;
+}
+

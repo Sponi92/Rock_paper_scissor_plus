@@ -35,7 +35,6 @@ function clearDraw() {
 function playRound() {
 
 	auswahlPC=chooseComputer();
-	console.log(auswahlPC);
 	checkHand();
 }
 function chooseComputer() { //Zufallsfunktion die dem PC seine Hand zuweist
@@ -71,7 +70,6 @@ function showResult() {
 	}
 function getComputerHand() {
 document.getElementById('computer').textContent = "The computer chose: ";
-
 	if (auswahlPC==="ROCK"){
 		var image = new Image();
 		image.src = rock;
@@ -103,12 +101,10 @@ function checkCount(){
 		}
 }
 function checkWinner(){
-if (countUser> countPC){
-document.getElementById('endScore').textContent = "You Win!";
-document.getElementById("computerImage").innerHTML=" ";
-}
+	if (countUser> countPC){
+		document.getElementById('endScore').textContent = "You Win!";
+	}
 else if (countUser< countPC){
-document.getElementById('endScore').textContent = "You Loose!";
-document.getElementById("computerImage").innerHTML=" ";
-}
+	document.getElementById('endScore').textContent = "You Loose!";
+	}
 }
