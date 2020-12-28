@@ -3,29 +3,91 @@ let auswahlPC
 let auswahlUser
 let countPC =0;
 let countUser = 0;
-
-
-
+let rock= "pictures/rock.png";
+let paper= "pictures/paper.png";
+let scissors= "pictures/scissor.png";
 
 document.getElementById("button1").addEventListener("click", function() {
+		clearDraw();
 		auswahlUser="ROCK"
 		playRound();
 		checkCount();
 });
 document.getElementById("button2").addEventListener("click", function() {
-		auswahlUser="PAPER"
-		playRound();
-		checkCount();
+	clearDraw();
+	auswahlUser="PAPER"
+	playRound();
+	checkCount();
 });
 
 document.getElementById("button3").addEventListener("click", function() {
+		clearDraw();
 		auswahlUser="SCISSORS"
 		playRound();
 		checkCount();
+	
 
 });
+function clearDraw() {
+	document.getElementById("drawContainer").textContent=" ";
+}
 
+function playRound() {
 
+	auswahlPC=chooseComputer();
+	console.log(auswahlPC);
+	checkHand();
+}
+function chooseComputer() { //Zufallsfunktion die dem PC seine Hand zuweist
+	document.getElementById("computerImage").innerHTML = " ";
+	return auswahl[Math.floor(Math.random() * 		auswahl.length)];
+}
+function checkHand(){
+
+	if (auswahlPC==="ROCK" && auswahlUser==="SCISSORS" || 		auswahlPC==="SCISSORS" && auswahlUser==="PAPER" ||
+		auswahlPC==="PAPER" && auswahlUser==="ROCK")
+		{
+		countPC =countPC+1;
+		showResult();
+		getComputerHand();
+	}
+	else if (auswahlPC==="ROCK" && auswahlUser==="PAPER" ||
+		auswahlPC==="SCISSORS" && auswahlUser==="ROCK"||
+		auswahlPC==="PAPER" && auswahlUser==="SCISSORS") 
+		{
+		countUser =countUser+1;
+		showResult();
+		getComputerHand();
+	}
+
+	else if (auswahlPC===auswahlUser){
+		showResult();		document.getElementById('drawContainer').textContent = 			"Draw";				
+		getComputerHand();
+		}
+		}
+		
+function showResult() {
+	document.getElementById('thisRound').textContent= "The Score is: Computer= "+countPC+" to Human= "+countUser ;
+	}
+function getComputerHand() {
+document.getElementById('computer').textContent = "The computer chose: ";
+
+	if (auswahlPC==="ROCK"){
+		var image = new Image();
+		image.src = rock;	document.getElementById("computerImage").appendChild(image);
+		image.classList.add("resize");
+		}
+	else if (auswahlPC==="PAPER"){
+		var image = new Image();
+		image.src = paper;	document.getElementById("computerImage").appendChild(image);
+		image.classList.add("resize");
+		}
+	else{
+		var image = new Image();
+		image.src = scissors;	document.getElementById("computerImage").appendChild(image);
+		image.classList.add("resize");
+	}
+}
 
 function checkCount(){
 	if (countPC===5 ||countUser===5){
@@ -36,49 +98,14 @@ function checkCount(){
 	else {
 		document.getElementById('endScore').textContent = " ";
 		}
-	
 }
-
-
-
-
-function playRound() {
-
-	auswahlPC=chooseComputer();
-	checkHand();
-}
-
-
-function checkHand(){
-
-	if (auswahlPC==="ROCK" && auswahlUser==="SCISSORS" || 		auswahlPC==="SCISSORS" && auswahlUser==="PAPER" ||
-		auswahlPC==="PAPER" && auswahlUser==="ROCK"){
-		countPC =countPC+1;
-		document.getElementById('thisRound').textContent = " Count: PC="+countPC+" to Count: User="+countUser;	document.getElementById('computer').textContent = "The computer chose: "+auswahlPC;
-
-	}
-	else if (auswahlPC==="ROCK" && auswahlUser==="PAPER" ||
-		auswahlPC==="SCISSORS" && auswahlUser==="ROCK"||
-		auswahlPC==="PAPER" && auswahlUser==="SCISSORS") {
-		countUser =countUser+1;
-		document.getElementById('thisRound').textContent = " Count: PC="+countPC+" to Count: User="+countUser;
-document.getElementById('computer').textContent = "The computer chose: "+auswahlPC;
-	}
-
-	else if (auswahlPC===auswahlUser){
-		document.getElementById('thisRound').textContent = "Draw";				document.getElementById('computer').textContent = "The computer chose: "+auswahlPC;
-		}
-		}
-		
-function chooseComputer() { //Zufallsfunktion die dem PC seine Hand zuweist
-	return auswahl[Math.floor(Math.random() * auswahl.length)];
-}
-
 function checkWinner(){
 if (countUser> countPC){
 document.getElementById('endScore').textContent = "You Win!";
+document.getElementById("computerImage").innerHTML=" ";
 }
 else if (countUser< countPC){
 document.getElementById('endScore').textContent = "You Loose!";
+document.getElementById("computerImage").innerHTML=" ";
 }
 }

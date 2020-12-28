@@ -6,18 +6,23 @@
 <title>Game Rock Paper Scissors</title>
 </head>
 <body>
+<div class="header">
 <h1 id="uberschrift">Beat the computer in a game of Rock Paper Scissors</h1>
 <h2 id="uberschrift2">Choose your Hand</h2>
+<h3 id="uberschrift3">The Game ends when one Player gets 5 Wins!</h3>
+</div>
 <div id="buttons"> 
-<button type="button" id="button1">Rock</button>
-<button type="button" id="button2">Paper</button>
-<button type="button" id="button3">Scissors</button>
+<input type="image" id="button1" class="btn" src="pictures/rock.png" alt="Rock">
+<input type="image" id="button2" class="btn" src="pictures/paper.png" alt="Paper">
+<input type="image" id="button3" class="btn" src="pictures/scissor.png" alt="Scissor">
 </div>
 
 <div id="result"> 
-<div id="computer"> </div>
-<div id="thisRound"> </div>
-<div id="endScore"> </div>
+<div id="computer" class="results"> </div>
+<div id="computerImage" class="results"> </div>
+<div id="drawContainer" class="results"> </div>
+<div id="thisRound" class="results"> </div>
+<div id="endScore" class="results"> </div>
 </div>
 <body>
 </html>
