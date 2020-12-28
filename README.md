@@ -1,1 +1,1 @@
-Verbesserter Input und Design
+Play Rock Paper Scissors against the Computer
